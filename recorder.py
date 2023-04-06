@@ -117,7 +117,7 @@ with dai.Device(pipeline) as device:
 			break
 		
 		t = time.time()
-		if t - last_capture > 10:
+		if t - last_capture > 10*60:
 			np.save(f"{depth_dir}/depth_{t}.npy", depth_frame)
 			cv2.imwrite(f"{left_dir}/left_{t}.png", left_frame)
 			cv2.imwrite(f"{right_dir}/right_{t}.png", right_frame)
